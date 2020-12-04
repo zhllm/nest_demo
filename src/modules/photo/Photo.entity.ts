@@ -1,0 +1,26 @@
+import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
+
+@Entity({
+    name: 'photo'
+})
+export class PhotoEntity {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column({
+        length: 100
+    })
+    name: string;
+
+    @Column("text")
+    description: string;
+
+    @Column()
+    filename: string;
+
+    @Column("double")
+    views: number;
+
+    @Column()
+    isPublished: boolean;
+}
